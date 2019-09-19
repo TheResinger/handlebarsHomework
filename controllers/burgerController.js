@@ -8,9 +8,6 @@ router.get("/", (req, res) => {
         res.render("index", hbsObject);
     });
 });
-router.get("/api/burgers", (req,res) => {
-    res.json()
-})
 
 router.post("/api/burgers", (req, res) => {
     burger.create(["name", "eaten"], [req.body.name, req.body.eaten], (result) => {
@@ -19,7 +16,7 @@ router.post("/api/burgers", (req, res) => {
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-    let condition = "id = " + req.params.id;
+    var condition = "id = " + req.params.id;
     console.log("Condition", condition);
 
     burger.update({ eaten: req.body.eaten }, condition, (result) => {
