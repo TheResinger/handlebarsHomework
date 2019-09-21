@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-    burger.create(["name", "eaten"], [req.body.name, req.body.eaten], (result) => {
+    burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], (result) => {
         res.json({ id: result.insertId });
     });
 });
@@ -19,7 +19,7 @@ router.put("/api/burgers/:id", (req, res) => {
     var condition = "id = " + req.params.id;
     console.log("Condition", condition);
 
-    burger.update({ eaten: req.body.eaten }, condition, (result) => {
+    burger.update({ devoured: req.body.devoured }, condition, (result) => {
         if (result.changedRows == 0) {
             return res.status(404).end();
         }

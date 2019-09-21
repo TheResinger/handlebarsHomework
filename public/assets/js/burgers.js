@@ -1,18 +1,18 @@
 $(() => {
-    $(".change-eaten").on("click", (e) => {
-        let id = $(this).data("id");
-        let newEaten = $(this).data("neweaten");
+    $(".change-eaten").on("click", function() {
+        var id = $(this).attr('id');
+        let newEaten = $(this).attr("newvalue");
+        console.log(id);
         console.log(newEaten);
         let newEatenState = {
-            eaten: newEaten
+            devoured: newEaten
         };
-        console.log("Line 9");
         console.log(newEatenState);
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newEatenState
         }).then(() => {
-            console.log(`Changed Eaten to ${newEaten}`);
+            console.log(`Changed Devoured to ${newEaten}`);
             location.reload();
         })
     });
@@ -21,10 +21,10 @@ $(() => {
         e.preventDefault();
 
         let newBurger = {
-            name: $("#ba").val().trim(),
-            eaten: 0
+            burger_name: $("#ba").val().trim(),
+            devoured: 0
         };
-
+        $("#ba").val("");
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger

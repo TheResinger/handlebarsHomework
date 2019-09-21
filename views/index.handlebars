@@ -11,7 +11,7 @@
         <div class="col-md-5 text-center">
             <ul>
                 {{#each burgers}}
-                    {{#unless eaten}}
+                    {{#unless devoured}}
                         {{> burgers/burger-block eaten=true}}
                     {{/unless}}
                 {{/each}}
@@ -21,9 +21,9 @@
         <div class="col-md-5 text-center">
             <ul>
                 {{#each burgers}}
-                    {{#if eaten}}
+                    {{#if devoured}}
                         <li>
-                            <p>Name : {{this.name}}</p>
+                            <p>{{this.burger_name}}</p>
                         </li>
                     {{/if}}
                 {{/each}}
