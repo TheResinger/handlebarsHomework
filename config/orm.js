@@ -65,17 +65,16 @@ let orm = {
             cb(result);
         });
     },
-    // Not needed but there for prosperity.
-    // delete: (table, condition, cb) => {
-    //     let queryString = "DELETE FROM " + table;
-    //     queryString += " WHERE ";
-    //     queryString += condition;
+    delete: (table, condition, cb) => {
+        let queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
 
-    //     connection.query(queryString, (err, result) => {
-    //         if (err) throw err;
-    //         cb(result);
-    //     })
-    // }
+        connection.query(queryString, (err, result) => {
+            if (err) throw err;
+            cb(result);
+        })
+    }
 }
 
 module.exports = orm;

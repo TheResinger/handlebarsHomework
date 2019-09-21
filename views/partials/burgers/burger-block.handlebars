@@ -1,7 +1,6 @@
-<li>
-    {{burger_name}}
-
-    <button class="change-eaten" id="{{id}}" newvalue="1">
+<li class="burgerItem rounded border border-secondary">
+    <h5>{{burger_name}}</h5>
+    <button class="change-eaten btn btn-dark" id="{{id}}" newvalue="1">
         {{#if eaten}}Eat Me!{{/if}}
     </button>
 </li>

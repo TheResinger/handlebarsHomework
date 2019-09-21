@@ -1,14 +1,19 @@
 <div class="container">
-    <div class="row">
-        <h1 class="col-md-12 text-center">Eat da Burger</h1>
+    <div class="row text-center">
+        <div class="col-md-12">
+            <img src="burger.png" alt="Burger">
+        </div>
     </div>
     <div class="row">
-        <h2 class="col-md-5 text-center">Want to Eat</h2>
-        <div class="col-md-2"></div>
-        <h2 class="col-md-5 text-center">Have Ate</h2>
+        <h1 id="eatda" class="col-md-12 text-center rounded">Eat da Burger</h1>
+    </div>
+    <div class="row headerrow">
+        <h2 class="col-md-4 text-center headeritem1">Want to Eat</h2>
+        <h2 class="col-md-4 text-center headeritem2"> Add a Burger</h2>
+        <h2 class="col-md-4 text-center headeritem3">Have Ate</h2>
     </div>
     <div class="row">
-        <div class="col-md-5 text-center">
+        <div class="col-md-4 text-center toEat">
             <ul>
                 {{#each burgers}}
                     {{#unless devoured}}
@@ -17,29 +22,26 @@
                 {{/each}}
             </ul>
         </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-5 text-center">
-            <ul>
+        <div class="col-md-4 newBurger">
+            <form class="create-form col-md-12 text-center">
+            <div class="form-group">
+                <h5>Burger Name:</h5>
+                <input type="text" id="ba" name="name">
+            </div>
+            <button class="btn btn-dark" type="submit">Add Burger</button>
+        </form>
+        </div>
+        <div class="col-md-4 haveAte">
+            <ul class="text-center">
                 {{#each burgers}}
                     {{#if devoured}}
-                        <li>
-                            <p>{{this.burger_name}}</p>
+                        <li class="burgerItem rounded border border-secondary">
+                            <h5 class="eatenItem" id="{{this.id}}">{{this.burger_name}}</h5>
                         </li>
                     {{/if}}
                 {{/each}}
             </ul>
         </div>
     </div>
-    <div class="row">
-        <h2 class="col-md-12 text-center"> Add a Burger</h2>
-    </div>
-    <div class="row">
-        <form class="create-form col-md-12 text-center">
-            <div class="form-group">
-                <label for="ba">Burger Name:</label>
-                <input type="text" id="ba" name="name">
-            </div>
-            <button type="submit">Add Burger</button>
-        </form>
-    </div>
+    
 </div>

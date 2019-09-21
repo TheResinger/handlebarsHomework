@@ -1,5 +1,5 @@
-$(() => {
-    $(".change-eaten").on("click", function() {
+$(document).ready(() => {
+    $(".change-eaten").on("click", function () {
         var id = $(this).attr('id');
         let newEaten = $(this).attr("newvalue");
         console.log(id);
@@ -17,8 +17,8 @@ $(() => {
         })
     });
 
-    $(".create-form").on("submit", (e) => {
-        e.preventDefault();
+    $(".create-form").on("submit", (event) => {
+        event.preventDefault();
 
         let newBurger = {
             burger_name: $("#ba").val().trim(),
@@ -33,4 +33,16 @@ $(() => {
             location.reload();
         });
     });
-});
+// ?????????
+    $(".eatenItem").on("click", function(event) {
+        var id = $(this).attr("id");
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE"
+        }).then(
+            () => {
+                console.log("Deleted Burger : " + id);
+                location.reload();
+            }
+        )
+    });
+})

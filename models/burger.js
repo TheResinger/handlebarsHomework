@@ -16,6 +16,11 @@ let burger = {
             cb(res);
         });
     },
+    delete: (condition, cb) => {
+        orm.delete("burgers", condition, (res) => {
+            cb(res);
+       });
+    }
 };
 
 module.exports = burger;

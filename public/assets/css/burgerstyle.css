@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(104, 106, 108);  
+}
+
+ul { 
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.burgerItem {
+    background-image: url(../images/seamless_paper_texture.png);
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+.toEat {
+    border: 2px black solid;
+    background-color: burlywood; 
+}
+
+.newBurger {
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+    background-color: burlywood;
+    padding-bottom: 10px;
+}
+
+.haveAte {
+    border: 2px black solid;
+    background-color: burlywood; 
+}
+
+.headeritem1 {
+    border: 2px black solid;
+    padding-bottom: 5px;
+    background-color: burlywood;
+}
+.headeritem2 {
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+    padding-bottom: 5px;
+    background-color: burlywood;
+}
+.headeritem3 {
+    border: 2px black solid;
+    padding-bottom: 5px;
+    background-color: burlywood;
+}
+
+#eatda {
+    color: maroon;
+    background-color: burlywood;
+    border: 2px black solid;
+    padding-bottom: 10px;
+}
+
