@@ -6,11 +6,11 @@ In this assignment, you'll create a burger logger with MySQL, Node, Express, Han
 
 ### Technologies Used
 
-Node.js
-MySql
-Heroku
-Handlebars
-ORM
+* Node.js
+* MySql
+* Heroku
+* Handlebars
+* ORM
 
 ### Heroku Deployment
 
